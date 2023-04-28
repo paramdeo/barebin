@@ -1,0 +1,54 @@
+#root {
+  margin: 0 auto;
+  text-align: end;
+}
+
+h1, h3, p {
+  text-align: center;
+}
+
+textarea {
+  border: none;
+  outline: none;
+  width: 75vw;
+  resize: none;
+  white-space: pre;
+  padding: 1rem;
+  font-size: inherit;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #ddcf04;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  font-size: inherit;
+  font-family: inherit;
+  margin-top: 0.75rem;
+  margin-left: 0.75rem;
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  background: #000;
+}
+
+.footer {
+  font-size: small;
+  margin-top: 3rem;
+}
