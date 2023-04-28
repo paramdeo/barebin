@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
@@ -12,12 +13,10 @@ const fromBase64 = (str: string) => {
 function App() {
   const [state, setState] = useState('')
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const messageRef: string | any = useRef('')
 
   const queryParameters = new URLSearchParams(window.location.search)
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const existingURL: string | any = queryParameters.get("b")
 
   const getURL = () => {
@@ -33,6 +32,10 @@ function App() {
     window.location.replace(window.location.origin)
   }
 
+  const updateBinLength = (event: any) => {
+    setState(event.target.value)
+  }
+
   useEffect(() => {
     if (existingURL) {
       setState(fromBase64(existingURL))
@@ -44,16 +47,19 @@ function App() {
     <h1>BareBin</h1>
     <p>A free, simple, and stateless pastebin.</p>
       <textarea
+        name="message"
         rows={15}
         cols={40}
         maxLength={1000}
         ref={messageRef}
         defaultValue={state}
+        onChange={updateBinLength}
         readOnly={ existingURL ? true : false} />
       <br/>
-      <button onClick={() => getURL()} className={ existingURL ? 'hidden' : 'button' }>Get Shareable URL</button>
-      <button onClick={() => toClipboard()} className={ existingURL ? 'button' : 'hidden' }>Copy to Clipboard</button>
-      <button onClick={() => newBin()} className={ existingURL ? 'button' : 'hidden' }>New BareBin Snippet</button>
+      <p className="binlength">{state.length} / 1000</p>
+      <button onClick={getURL} className={ existingURL ? 'hidden' : 'button' }>Get Shareable URL</button>
+      <button onClick={toClipboard} className={ existingURL ? 'button' : 'hidden' }>Copy to Clipboard</button>
+      <button onClick={newBin} className={ existingURL ? 'button' : 'hidden' }>New BareBin Snippet</button>
       <p className="footer">Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh">Paramdeo K. Singh</a> &middot; Made with ☕️ in 🇬🇾</p>
     </>
   )

@@ -52,3 +52,7 @@ a {
   font-size: small;
   margin-top: 3rem;
 }
+
+.binlength {
+  text-align: end;
+}
