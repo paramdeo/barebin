@@ -45,8 +45,10 @@ function App() {
   return (
     <>
       <br/>
-      <h1 className="flex-start">BareBin</h1>
-      <p className="flex-start">A free, simple, and stateless pastebin</p>
+      <div className="flex-start">
+      <h1>BareBin</h1>
+      <p>A free, simple, and stateless pastebin</p>
+      </div>
       <textarea
         name="message"
         rows={12}
@@ -55,12 +57,13 @@ function App() {
         ref={messageRef}
         defaultValue={state}
         onChange={updateBinLength}
-        readOnly={ existingURL ? true : false} />
+        readOnly={ existingURL ? true : false}
+      />
       <p className="flex-end">{state.length} / 1000</p>
       <button onClick={getURL} className={ existingURL ? 'hidden' : 'button' }>Get Shareable URL</button>
       <button onClick={toClipboard} className={ existingURL ? 'button' : 'hidden' }>Copy to Clipboard</button>
       <button onClick={newBin} className={ existingURL ? 'button' : 'hidden' }>New BareBin Snippet</button>
-      <p className="footer flex-center">Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh">Paramdeo K. Singh</a> &middot; Made with ☕️ in 🇬🇾</p>
+      <p className="footer">Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh">Paramdeo Singh</a> &middot; Made with ☕️ in 🇬🇾</p>
     </>
   )
 }
