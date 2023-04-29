@@ -60,7 +60,7 @@ function App() {
       <button onClick={getURL} className={ existingURL ? 'hidden' : 'button' }>Get Shareable URL</button>
       <button onClick={toClipboard} className={ existingURL ? 'button' : 'hidden' }>Copy to Clipboard</button>
       <button onClick={newBin} className={ existingURL ? 'button' : 'hidden' }>New BareBin Snippet</button>
-      <p className="footer">Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh">Paramdeo K. Singh</a> &middot; Made with ☕️ in 🇬🇾</p>
+      <p className="footer flex-center">Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh">Paramdeo K. Singh</a> &middot; Made with ☕️ in 🇬🇾</p>
     </>
   )
 }

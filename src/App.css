@@ -56,7 +56,6 @@ p, h1, h2, h3, h4, h5, h6 {
 #root {
   margin: 0 auto;
   padding: 5%;
-  text-align: center;
   display: flex;
   flex-direction: column;
 }
@@ -86,6 +85,11 @@ a {
 .flex-end {
   display: flex;
   justify-content: flex-end;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
 
 .hidden {
