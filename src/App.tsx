@@ -44,19 +44,19 @@ function App() {
 
   return (
     <>
-    <h1>BareBin</h1>
-    <p>A free, simple, and stateless pastebin.</p>
+      <br/>
+      <h1 className="flex-start">BareBin</h1>
+      <p className="flex-start">A free, simple, and stateless pastebin</p>
       <textarea
         name="message"
-        rows={15}
+        rows={12}
         cols={40}
         maxLength={1000}
         ref={messageRef}
         defaultValue={state}
         onChange={updateBinLength}
         readOnly={ existingURL ? true : false} />
-      <br/>
-      <p className="binlength">{state.length} / 1000</p>
+      <p className="flex-end">{state.length} / 1000</p>
       <button onClick={getURL} className={ existingURL ? 'hidden' : 'button' }>Get Shareable URL</button>
       <button onClick={toClipboard} className={ existingURL ? 'button' : 'hidden' }>Copy to Clipboard</button>
       <button onClick={newBin} className={ existingURL ? 'button' : 'hidden' }>New BareBin Snippet</button>
