@@ -74,7 +74,7 @@ function App() {
       <button onClick={createShareableURL} className={ existingURL ? 'hidden' : 'button' }>Get Shareable URL</button>
       <button onClick={copyToClipboard} className={ existingURL ? 'button' : 'hidden' }>Copy Content to Clipboard</button>
       <button onClick={newMessage} className={ existingURL ? 'button' : 'hidden' }>New BareBin Snippet</button>
-      <p className="footer">Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh">Paramdeo Singh</a> &middot; Made with ☕️ in 🇬🇾</p>
+      <p className="footer">Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh">Paramdeo Singh</a> &middot; Made with ☕️ in 🇬🇾<br/><a href="https://github.com/paramdeo/barebin" target="_blank" rel="noopener" title="@paramdeo/barebin">Source on GitHub</a></p>
     </>
   )
 }
