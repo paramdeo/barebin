@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { RecoilRoot, atom, useRecoilState } from 'recoil';
-
-import './App.css'
+import { RecoilRoot, atom, useRecoilState } from 'recoil'
 
 const toBase64 = (str: string) => {
   // String is URI encoded before being Base64 encoded to handle UTF-8
@@ -55,20 +53,25 @@ function Message() {
 
   return (
     <>
-      <textarea
-        rows={12}
+    <div className="flex flex-row px-5 justify-center">
+    <textarea
+        rows={8}
         cols={40}
         maxLength={1000}
         onChange={onChange}
         readOnly={ existingURL ? true : false}
         value={message}
-      />
-      <p className="flex-end">{message.length} / 1000</p>
-      <button onClick={createShareableURL} className={ existingURL ? 'hidden' : 'button' }>Get Shareable URL</button>
-      <p className="flex-center">
-        <button onClick={copyToClipboard} className={ existingURL ? 'button' : 'hidden' }>Copy Content to Clipboard</button>&emsp;
-        <button onClick={newMessage} className={ existingURL ? 'button' : 'hidden' }>New BareBin Snippet</button>
-      </p>
+        className="textarea textarea-bordered textarea-lg resize-none rounded-md flex-1" >
+      </textarea>
+    </div>
+    <div className="flex flex-row px-5 justify-end">
+      <p className="py-2">{message.length} / 1000</p>
+    </div>
+    <div className="flex flex-row px-5 justify-center">
+      <button onClick={createShareableURL} className={ existingURL || !message ? 'hidden' : 'btn' }>Get Shareable URL</button>
+      <button onClick={copyToClipboard} className={ existingURL ? 'btn' : 'hidden' }>Copy Content to Clipboard</button>&emsp;
+      <button onClick={newMessage} className={ existingURL ? 'btn btn-outline' : 'hidden' }>New BareBin Snippet</button>
+    </div>
     </>
   )
 }
@@ -76,10 +79,11 @@ function Message() {
 function Header() {
   return (
     <>
-      <br/>
-      <div className="flex-start">
-      <h1>BareBin</h1>
-      <p>A free, simple, and stateless pastebin</p>
+      <div className="flex flex-row justify-center">
+        <h1 className="text-5xl py-2 font-bold">BareBin</h1>
+      </div>
+      <div className="flex flex-row justify-center">
+        <p className="pb-3">A free, simple, and stateless pastebin</p>
       </div>
     </>
   )
@@ -88,7 +92,11 @@ function Header() {
 function Footer() {
   return (
     <>
-      <p className="footer">Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh">Paramdeo Singh</a> &middot; Made with ☕️ in 🇬🇾<br/><a href="https://github.com/paramdeo/barebin" target="_blank" rel="noopener" title="@paramdeo/barebin">github/paramdeo/barebin</a></p>
+      <footer className="footer footer-center p-4 text-base-content">
+        <div>
+          <p>Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh" className="underline underline-offset-2">Paramdeo Singh</a> &middot; Made with ☕️ in 🇬🇾<br/><a href="https://github.com/paramdeo/barebin" target="_blank" rel="noopener" title="@paramdeo/barebin" className="underline underline-offset-2 py-2">@paramdeo/barebin</a></p>
+        </div>
+      </footer>
     </>
   )
 }
