@@ -53,7 +53,7 @@ function Message() {
 
   return (
     <>
-    <div className="flex flex-row px-5 justify-center">
+    <div className="flex flex-row px-5 max-w-full justify-center">
     <textarea
         rows={8}
         cols={40}
@@ -61,11 +61,11 @@ function Message() {
         onChange={onChange}
         readOnly={ existingURL ? true : false}
         value={message}
-        className="textarea textarea-bordered textarea-lg resize-none rounded-md flex-1" >
+        className="textarea textarea-bordered resize-none rounded-md flex-1 mx-auto font-mono" >
       </textarea>
     </div>
-    <div className="flex flex-row px-5 justify-end">
-      <p className="py-2">{message.length} / 1000</p>
+    <div className="flex flex-row px-5 max-w-full justify-end">
+      <p className="py-2 justify-self-center ">{message.length} / 1000</p>
     </div>
     <div className="flex flex-row px-5 justify-center">
       <button onClick={createShareableURL} className={ existingURL || !message ? 'hidden' : 'btn' }>Get Shareable URL</button>
@@ -92,9 +92,11 @@ function Header() {
 function Footer() {
   return (
     <>
-      <footer className="footer footer-center p-4 text-base-content">
+      <footer className="footer footer-center p-4">
         <div>
-          <p>Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh" className="underline underline-offset-2">Paramdeo Singh</a> &middot; Made with ☕️ in 🇬🇾<br/><a href="https://github.com/paramdeo/barebin" target="_blank" rel="noopener" title="@paramdeo/barebin" className="underline underline-offset-2 py-2">@paramdeo/barebin</a></p>
+          <p>Copyright &copy; <a href="https://paramdeo.com" target="_blank" rel="noopener" title="Personal website of Paramdeo Singh" className="underline underline-offset-2">Paramdeo Singh</a> &middot; Made with ☕️ in 🇬🇾
+          </p>
+          <p><a href="https://github.com/paramdeo/barebin" target="_blank" rel="noopener" title="@paramdeo/barebin" className="underline underline-offset-2 py-2">@paramdeo/barebin</a></p>
         </div>
       </footer>
     </>
