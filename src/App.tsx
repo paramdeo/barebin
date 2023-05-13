@@ -69,8 +69,8 @@ function Message() {
     </div>
     <div className="flex flex-row px-5 justify-center">
       <button onClick={createShareableURL} className={ existingURL || !message ? 'hidden' : 'btn' }>Get Shareable URL</button>
-      <button onClick={copyToClipboard} className={ existingURL ? 'btn' : 'hidden' }>Copy Content to Clipboard</button>&emsp;
-      <button onClick={newMessage} className={ existingURL ? 'btn btn-outline' : 'hidden' }>New BareBin Snippet</button>
+      <button onClick={copyToClipboard} className={ existingURL ? 'btn' : 'hidden' }>Copy to Clipboard</button>&emsp;
+      <button onClick={newMessage} className={ existingURL ? 'btn btn-outline' : 'hidden' }>New Snippet</button>
     </div>
     </>
   )
